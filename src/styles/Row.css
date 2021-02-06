@@ -33,3 +33,18 @@
 .Row:last-child {
   margin-bottom: 20px;
 }
+
+.error {
+  display: grid;
+  place-items: center;
+  height: 100px;
+}
+
+@media (max-width: 415px) {
+  .Row {
+    margin-left: 10px;
+  }
+  .row-posters {
+    padding: 20px 5px;
+  }
+}

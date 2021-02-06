@@ -51,3 +51,14 @@
     #111
   );
 }
+
+@media (max-width: 415px) {
+  .banner-contents {
+    width: 90vw;
+    margin: auto;
+  }
+  .banner-description {
+    width: 90vw;
+    margin-right: 10px;
+  }
+}
