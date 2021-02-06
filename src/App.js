@@ -1,9 +1,12 @@
 import Row from "./components/Row";
+import Banner from "./components/Banner";
 import request from "./requests";
 
 const App = () => {
   return (
     <div className="App">
+      {/* <Navbar /> */}
+      <Banner />
       <Row
         title="NEFTLIX ORIGINALS"
         fetchURL={request.fetchNetFlixOriginals}
