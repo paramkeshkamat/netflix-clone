@@ -1,0 +1,7 @@
+ <a href="https://fontmeme.com/netflix-font/">
+        <img
+          src="https://fontmeme.com/permalink/210206/e103bafc6384aed96e69f13ae16879e9.png"
+          alt="netflix-font"
+          border="0"
+        />
+      </a>
