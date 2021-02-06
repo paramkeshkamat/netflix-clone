@@ -29,3 +29,7 @@
 .row-largePoster:hover {
   transform: scale(1.08);
 }
+
+.Row:last-child {
+  margin-bottom: 20px;
+}

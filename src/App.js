@@ -1,11 +1,12 @@
-import Row from "./components/Row";
+import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
+import Row from "./components/Row";
 import request from "./requests";
 
 const App = () => {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner />
       <Row
         title="NEFTLIX ORIGINALS"
