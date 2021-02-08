@@ -4,14 +4,14 @@ import requests from "../requests";
 import "../styles/Banner.css";
 
 const Banner = () => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     const fetchMovie = async () => {
       const response = await axios.get(requests.fetchNetFlixOriginals);
       setMovie(
         response.data.results[
-          Math.floor(Math.random() * response.data.results.length - 1)
+          Math.floor(Math.random() * response.data.results.length)
         ]
       );
     };
@@ -25,14 +25,14 @@ const Banner = () => {
     <header
       className="Banner"
       style={{
-        backgroundImage: `url(https:/image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
         backgroundSize: "cover",
         backgroundPosition: "center 0%",
       }}
     >
       <div className="banner-contents">
         <h1 className="banner-title">
-          {movie?.title || movie?.name || movie?.original_name}
+          {movie?.title || movie.name || movie?.original_name}
         </h1>
         <div className="banner-buttons">
           <button className="banner-button">Play</button>

@@ -3,7 +3,7 @@ import axios from "../axios";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import "../styles/Row.css";
-const base_url = "https:/image.tmdb.org/t/p/original";
+const base_url = "https://image.tmdb.org/t/p/original";
 
 const Row = ({ title, fetchURL, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
@@ -34,7 +34,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerURL(urlParams.get("v"));
         })
-        .catch(() => console.log("Temporary Unavailable"));
+        .catch((err) => console.log("Temporary Unavailable"));
     }
   };
 
@@ -42,18 +42,17 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     <div className="Row">
       <h2 className="title">{title}</h2>
       <div className="row-posters">
-        {movies.map((movie) => {
-          const { id, title, poster_path, backdrop_path } = movie;
-          return (
-            <img
-              key={id}
-              onClick={() => handleClick(movie?.title, movie?.id)}
-              className={`row-poster ${isLargeRow && "row-largePoster"}`}
-              src={`${base_url}${isLargeRow ? poster_path : backdrop_path}`}
-              alt={title}
-            />
-          );
-        })}
+        {movies.map((movie) => (
+          <img
+            key={movie?.id}
+            onClick={() => handleClick(movie?.title, movie?.id)}
+            className={`row-poster ${isLargeRow && "row-largePoster"}`}
+            src={`${base_url}${
+              isLargeRow ? movie?.poster_path : movie?.backdrop_path
+            }`}
+            alt={movie?.title}
+          />
+        ))}
       </div>
       {trailerURL && <YouTube videoId={trailerURL} opts={opts} />}
     </div>

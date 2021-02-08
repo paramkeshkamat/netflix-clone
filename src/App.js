@@ -13,6 +13,7 @@ const App = () => {
         fetchURL={request.fetchNetFlixOriginals}
         isLargeRow
       />
+      <Row title="Trending Now" fetchURL={request.fetchTrending} />
       <Row title="Top Rated" fetchURL={request.fetchTopRated} />
       <Row title="Action Movies" fetchURL={request.fetchActionMovies} />
       <Row title="Comedy Movies" fetchURL={request.fetchComedyMovies} />
